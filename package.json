@@ -1,0 +1,21 @@
+{
+  "name": "untitled6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "tsc ./app.ts & node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "routing-controllers": "^0.10.4",
+    "tsc": "^2.0.4",
+    "typedi": "^0.10.0",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.3"
+  }
+}
