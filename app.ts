@@ -3,9 +3,13 @@ import {ServerResponse} from "http"; // Предполагается, что Ser
 
 const server = new ServerApi();
 
-server.get('/', { params: [], body: [] }, (params: ParamHandler, body: ParamHandler, res: ServerResponse) => {
-    // Обработка GET-запроса на корневой путь '/'
-    return 'Привет, мир! Это корневой путь.';
+server.get('/', { params: [{ name: "name", type: "string", required: true }], body: [] }, (params: ParamHandler, body: ParamHandler, res: ServerResponse) => {
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Привет, ' + params.name + ' Это корневой путь.')
 });
+
+server.post('/', { params: [], body: [] }, (params: ParamHandler, body: ParamHandler, res: ServerResponse) => {
+
+})
 
 server.listen(3000); // Начнем прослушивать порт 3000
